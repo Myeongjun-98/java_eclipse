@@ -99,7 +99,7 @@ public class test {
 		System.out.println( 'J' - 64 );
 		System.out.println( '가' - 64 );
 		
-//		String name = "홍길동";	// 문자열은 String 클래스타입 사용	
+		String name = "홍길동";	// 문자열은 String 클래스타입 사용	
 		boolean isApple = true; // 참, 거짓 값을 가지는 타입
 		System.out.println( isApple );
 		

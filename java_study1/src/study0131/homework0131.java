@@ -37,7 +37,7 @@ public class homework0131 {
 		분 = scan.nextInt();
 		time = 시간 * 60 + 분;
 		
-		if (time >= 0 && time <= 39) 
+/*		if (time >= 0 && time <= 39) 
 			{ totalPrice = defaultPrice;
 				} else if (time >= 40 && time <= 119) {
 					totalPrice = defaultPrice + ((time - defaultTime) / 10) * extraPrice ;
@@ -51,6 +51,21 @@ public class homework0131 {
 										totalPrice = defaultPrice4h + ((time - defaultTime4h) / 10) * extraPrice ;
 										}else if (time >= 480) {
 											totalPrice = defaultPrice8h;}
+	*/	
+		if (time >= 0 && time <= 39) 
+		{ totalPrice = defaultPrice;
+			} else if (time <= 119) {
+				totalPrice = defaultPrice + ((time - defaultTime) / 10) * extraPrice ;
+				}else if (time <= 129) {
+					totalPrice = defaultPrice2h;
+					}else if (time <= 239) {
+						totalPrice = defaultPrice2h + ((time - defaultTime2h) / 10) * extraPrice ;
+							}else if (time <= 249) {
+								totalPrice = defaultPrice4h;
+								}else if (time <= 479) {
+									totalPrice = defaultPrice4h + ((time - defaultTime4h) / 10) * extraPrice ;
+									}else if (time >= 480) {
+										totalPrice = defaultPrice8h;}
 		System.out.println("당신의 요금은 " + totalPrice + "원 입니다.");
 			
 		

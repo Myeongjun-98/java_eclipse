@@ -30,10 +30,16 @@ public class homework0203 {
 		break;
 		case 3 : System.out.println("보입니다!");
 		}
-		// 예외값 처리 (return은 js에서 썼는데 되길래 반영함)
+		
+		// String으로 컴퓨터의 출력값을 문자열로 표현
+		String isCom = (opponent == 1) ? "가위" : (opponent == 2) ? "바위" : "보";
+		System.out.println("컴퓨터가 낸 것은 " + isCom + "입니다!");
+		//////////////
+		
+		// 예외값 처리 
 		if (!(me >= 1 && me <= 3)) {
 			System.out.println("올바른 값을 입력해주세요");
-			return;
+			return; //		(return은 js에서 썼는데 되길래 반영함)
 		// 승패공식
 		}else if (me == opponent) {
 		System.out.println("비겼습니다!");

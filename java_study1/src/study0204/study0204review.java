@@ -52,31 +52,33 @@ public class study0204review {
 			int RSP = (int)(Math.random()*3+1);			// 가위바위보 랜덤함수
 			int result = mySelect - RSP;						// switch에 활용하기 위해 나와 컴퓨터의 가위바위보 결과를 변수선언
 			
-			switch(result) {											// switch문
-			case -1 :
-			case 2 :
-				System.out.println("");
-				System.out.println("패배...!");
-				System.out.printf("현재까지 승리 수 : %d회 \n", winningScore);
-				System.out.println("");
-				break;
-			case 0 :
-				System.out.println("");
-				System.out.println("무승부 !");
-				System.out.printf("현재까지 승리 수 : %d회 \n", winningScore);
-				System.out.println("");
-				break;
-			case 1 :
-			case -2 :
-				++winningScore;
-				System.out.println("");
-				System.out.println("승리!");
-				System.out.printf("현재까지 승리 수 : %d회 \n", winningScore);
-				System.out.println("");
-				break;
-				default : 
-					System.out.println("올바르지 않은 값을 입력하셨습니다. 다시 플레이해주세요.");
-					return;
+			if (mySelect >= 1 && mySelect <= 3) {			// 입력값을 1~3 한정하기 위해 if문 사용
+				switch(result) {											// switch문
+				case -1 :
+				case 2 :
+					System.out.println("");
+					System.out.println("패배...!");
+					System.out.printf("현재까지 승리 수 : %d회 \n", winningScore);
+					System.out.println("");
+					break;
+				case 0 :
+					System.out.println("");
+					System.out.println("무승부 !");
+					System.out.printf("현재까지 승리 수 : %d회 \n", winningScore);
+					System.out.println("");
+					break;
+				case 1 :
+				case -2 :
+					++winningScore;
+					System.out.println("");
+					System.out.println("승리!");
+					System.out.printf("현재까지 승리 수 : %d회 \n", winningScore);
+					System.out.println("");
+					break;
+				}
+			}else {																// 입력값이 올바르지 않을 경우 예외처리
+				System.out.println("올바르지 않은 값을 입력하셨습니다. 다시 플레이해주세요.");
+				return;
 			}
 		}
 		System.out.println("당신의 총 승리 수는 " + winningScore + " 회 입니다.");

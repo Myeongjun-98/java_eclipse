@@ -22,7 +22,7 @@ public class study0206Hw {
 		 int lastNumber = 0;		// 출력 초기값
 		 
 		 do {
-			System.out.print("1개 ~ 3개 중 출력할 숫자 갯수를 결정하세요. : ");	 
+			System.out.print("[ 내 차례 ] 1개 ~ 3개 중 출력할 숫자 갯수를 결정하세요. : ");	 
 			int myDecision = scan.nextInt();
 			
 			if (!(myDecision >= 1 && myDecision <= 3)) {				// 1~3이외의 값을 입력했을 경우 다시 입력하기
@@ -48,7 +48,10 @@ public class study0206Hw {
 					if (lastNumber == 31)
 						break;
 				}
-
+				
+				if (lastNumber == 31)
+					break;
+				
 				System.out.println("");
 				
 				int comDecision = (int)(Math.random() * 3 + 1);		// 컴퓨터가 뽑아내는 1~3값

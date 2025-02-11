@@ -1,4 +1,4 @@
-package study0211HomeWork;
+package study0211;
 
 public class study0210HomeworkReview {
 

@@ -14,10 +14,9 @@ public class study0210HomeworkReview {
 			if (temp % 2 == 0) { // 2(나머지)나누기 했을 때 나머지가 0이면 짝수
 				boolean isSame = false;		// 같으면 true, 같지 않으면 false
 				for ( int i = 0; i < idx; i++) {
-					if(num[i] == temp) {
+					if(num[i] == temp)
 						isSame = true;
-					}
-				}
+				}if(!isSame)
 				num[idx++] = temp;
 
 			}

@@ -1,32 +1,39 @@
 package study0211BingoCreate;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class BingoSince20250211 {
 
 	public static void main(String[] args) {
 		
-		Scanner scan = new Scanner(System.in);
-		
-		int[] game = new int[25];		
-		
-		
-		/*
-		 						빙고게임 완성하기
-		 중복 없애보기
-		  
-		 5줄 되면 승리 및 게임 종료 구현하기 
-		  
-		 + 컴퓨터와 빙고게임 구현(컴퓨터가 승리하게끔 유도하는 코드 구현)
-		 */
-		
-		
-		
-		
-		
-		
+		Scanner scan = new Scanner(System.in);		
+
+		int[] game = new int[25];
+		int bingo = 0;
+		// game배열에 값 채우기
+//		for(int i = 0; i < game.length; i++) {
+//			game[i] = (int)(Math.random() * 50 + 1); 
+//		}	
+		int idx = 0;
+		while(true) {			//중복제거 위해 무한루프
+			int ranNum = (int)(Math.random() * 50 + 1);		// 랜덤수 출력
+			boolean isSame = false;		// 불리언타입 기본값 false
+				for(int i = 0; i < idx; i++) {		// 배열 인덱스 값 부여 및 검사
+					if(game[i] == ranNum)		// 중복 발생 시
+						isSame = true;				// 불리언 true;
+					}if(!isSame) {					// 중복발생 X시 배열의 앞 값에 랜덤값 대입
+						game[idx] = ranNum;
+						idx++;						//		다음 인덱스로 넘어감
+					}
+			if(idx == game.length)		// 인덱스가 인덱스 크기와 같아질 때 종료	
+				break;							// (길이는 25인데 인덱스가 25가 되면 그 시점에서 종료, 인덱스 24까지 작성완료
+		}
+			
+//		System.out.println(Arrays.toString(game));	// 값 확인
 		
 		// 5줄 5칸 출력
+		
 		while(true) {		// 빙고판 출력부분
 			for(int i = 0; i < 5; i++) {
 				for(int k = 0; k < 5; k++) {
@@ -47,11 +54,46 @@ public class BingoSince20250211 {
 			}
 		}//while끝		
 
+		/*
+		 	전제 : 해당 인덱스 값이 모두 0이어야 빙고
+		 	
+		 	규칙1 : i 인덱스가 같고 k인덱스가 0~4(다 채워짐)
+			규칙2 : i와 k가 동시에 0 ~ 4 까지 같이 상승(우상하)
+			규칙2-1 : i가 0~4로 상승하는 동시에 k가 4~0으로 하락(좌상하)
+			규칙3 : k인덱스가 같고 i인덱스가 0~4(다 채워짐)
+		 
+		 	for(i)/for(k) 검사 후 만족하면, 변수 bingo += 1
+		 	예상되는 문제 : 시퀀스 반복 시 빙고 계속 늘어날 가능성 有
 		
-		
-		
-		
-		
+		 	-- 규칙1 : 0, 1, 2, 3, 4
+		 				  	5, 6, 7, 8, 9 .....
+			-- 규칙2 : 0, 6, 12, 18, 24
+			-- 규칙3 : 0, 5, 10, 15, 20
+							1, 6, 11, 16, 21...
+			-- 규칙4 : 4, 8, 12, 16, 20
+			이것들만 만족하는 수식이 있으면 쉬울텐데....
+			index = i
+			
+			--- 규칙1 : i % 5일때 0~4범위 값이 다 0일 때
+			--- 규칙2 : i % 5일 때 0, 1, 2, 3, 4의 값이 0일 때
+							또는 6의 배수인 i의 값이 다 0일 때
+			--- 규칙3 : i % 5일 때 같은 i(0~4)의 값 5개가 다 0일 때
+			--- 규칙4 :  4의 배수인 i의 값이 다 0일 때
+			
+			
+		 	 ++ 빙고 만족 시 BG로 표시되면 좋을듯?
+		 */
+
+//		for(int i = 0; i < 5; i++) {
+//			boolean isSame = false;
+//			while(true) {
+//				for(int k = 0; k < 5; k++) {
+//					if(game[k*i] == 0) {
+//						isSame = true;
+//					}
+//				}
+//			}	
+//		}
 		
 	}
 

@@ -8,9 +8,7 @@ public class BingoSince20250211 {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);		
-
 		int[] game = new int[25];
-		int bingo = 0;
 		// game배열에 값 채우기
 //		for(int i = 0; i < game.length; i++) {
 //			game[i] = (int)(Math.random() * 50 + 1); 
@@ -33,8 +31,15 @@ public class BingoSince20250211 {
 //		System.out.println(Arrays.toString(game));	// 값 확인
 		
 		// 5줄 5칸 출력
+		int bingo = 0;		// 변수 bingo의 초기값
 		
 		while(true) {		// 빙고판 출력부분
+			System.out.println("현재까지 빙고 수 : " + bingo ); 
+			System.out.println();
+			if(bingo >= 5) {
+				System.out.println("게임 끝!");
+				return;
+			}
 			for(int i = 0; i < 5; i++) {
 				for(int k = 0; k < 5; k++) {
 					if( game[ i * 5 + k ] == 0) {
@@ -52,8 +57,42 @@ public class BingoSince20250211 {
 					game[i]=0;
 				}
 			}
-		}//while끝		
-
+			
+			bingo = 0;		// 빙고 출력시마다 빙고 수 초기화
+			
+			// 숫자 입력 후 빙고 탐색
+			int check = 0;		
+			for(int i = 0; i < 5; i++) {			// 가로축의 빙고 탐색
+				for(int k = 0; k < 5; k++) {		// i마다 x축의 값의 합이 0이면 빙고 +
+					check += game[i * 5 + k];
+				}
+				if(check == 0) 
+					bingo += 1;
+			}		
+			check = 0;
+			for(int i = 0; i < 5; i++) {			// 세로축의 빙고 탐색
+				for(int k = 0; k < 5; k++) {		// i마다 y축의 합이 0이면 빙고 +
+					check += game[i + 5 * k];	
+				}	
+				if(check == 0) 
+					bingo += 1;
+			}		
+			check = 0;
+			for(int i = 0; i < 5; i++) {			// /축의 빙고 탐색
+				check += game[6 * i];	
+			}	if(check == 0) 
+						bingo += 1;
+			
+			check = 0;
+			for(int i = 1; i <= 5; i++) {			// \축의 빙고 탐색
+				check += game[4 * i];	
+			}	if(check == 0) 
+						bingo += 1;
+			
+		}	//while문 끝
+		
+		
+		
 		/*
 		 	전제 : 해당 인덱스 값이 모두 0이어야 빙고
 		 	
@@ -81,20 +120,17 @@ public class BingoSince20250211 {
 			--- 규칙3 : i % 5일 때 같은 i(0~4)의 값 5개가 다 0일 때
 			--- 규칙4 :  4의 배수인 i의 값이 다 0일 때
 			
+			-- 1차원배열로만 할 수는 없을까?
 			
 		 	 ++ 빙고 만족 시 BG로 표시되면 좋을듯?
 		 */
 
-//		for(int i = 0; i < 5; i++) {
-//			boolean isSame = false;
-//			while(true) {
-//				for(int k = 0; k < 5; k++) {
-//					if(game[k*i] == 0) {
-//						isSame = true;
-//					}
-//				}
-//			}	
-//		}
+		
+
+		
+		
+		
+		
 		
 	}
 

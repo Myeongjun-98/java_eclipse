@@ -49,7 +49,7 @@ public class BingoSince20250211 {
 					}
 					System.out.println();
 				}
-			
+			System.out.println();
 			System.out.print("숫자를 입력 : ");
 			int num = scan.nextInt();	// 빙고판에 있는 숫자 입력
 			for(int i = 0; i < game.length; i++) {
@@ -68,22 +68,22 @@ public class BingoSince20250211 {
 				}
 				if(check == 0) 
 					bingo += 1;
+				check = 0;
 			}		
-			check = 0;
 			for(int i = 0; i < 5; i++) {			// 세로축의 빙고 탐색
 				for(int k = 0; k < 5; k++) {		// i마다 y축의 합이 0이면 빙고 +
 					check += game[i + 5 * k];	
 				}	
 				if(check == 0) 
 					bingo += 1;
+				check = 0;
 			}		
-			check = 0;
 			for(int i = 0; i < 5; i++) {			// /축의 빙고 탐색
 				check += game[6 * i];	
 			}	if(check == 0) 
 						bingo += 1;
-			
 			check = 0;
+			
 			for(int i = 1; i <= 5; i++) {			// \축의 빙고 탐색
 				check += game[4 * i];	
 			}	if(check == 0) 

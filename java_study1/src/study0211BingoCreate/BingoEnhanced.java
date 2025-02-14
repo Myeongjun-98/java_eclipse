@@ -1,12 +1,10 @@
 package study0211BingoCreate;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class BingoSince20250211 {
+public class BingoEnhanced {
 
 	public static void main(String[] args) {
-		
 		Scanner scan = new Scanner(System.in);		
 		int[] game = new int[25];
 		// game배열에 값 채우기
@@ -49,7 +47,7 @@ public class BingoSince20250211 {
 					}
 					System.out.println();
 				}
-			
+			System.out.println();
 			System.out.print("숫자를 입력 : ");
 			int num = scan.nextInt();	// 빙고판에 있는 숫자 입력
 			for(int i = 0; i < game.length; i++) {
@@ -61,33 +59,27 @@ public class BingoSince20250211 {
 			bingo = 0;		// 빙고 출력시마다 빙고 수 초기화
 			
 			// 숫자 입력 후 빙고 탐색
-			int check = 0;		
+			int check = 0, check1 = 0, check2 = 0, check3 = 0;		
 			for(int i = 0; i < 5; i++) {			// 가로축의 빙고 탐색
-				for(int k = 0; k < 5; k++) {		// i마다 x축의 값의 합이 0이면 빙고 +
-					check += game[i * 5 + k];
+				for(int k = 0; k < 5; k++) {		
+					check += game[i * 5 + k];	// i마다 x축의 값의 합이 0이면 빙고 +
+					check1 += game[i + 5 * k];	// i마다 y축의 합이 0이면 빙고 +
 				}
-				if(check == 0) 
+				check2 += game[6 * i];			// /축의 빙고 탐색
+				check3 += game[4 * i + 4];		// \축의 빙고 탐색
+				if(check == 0) 			// 가로, 세로축 빙고의 경우 빙고 여러 가능성 있기에 for문 內 삽입
 					bingo += 1;
-			}		
-			check = 0;
-			for(int i = 0; i < 5; i++) {			// 세로축의 빙고 탐색
-				for(int k = 0; k < 5; k++) {		// i마다 y축의 합이 0이면 빙고 +
-					check += game[i + 5 * k];	
-				}	
-				if(check == 0) 
+				check = 0;
+				if(check1 == 0) 
 					bingo += 1;
-			}		
-			check = 0;
-			for(int i = 0; i < 5; i++) {			// /축의 빙고 탐색
-				check += game[6 * i];	
-			}	if(check == 0) 
-						bingo += 1;
-			
-			check = 0;
-			for(int i = 1; i <= 5; i++) {			// \축의 빙고 탐색
-				check += game[4 * i];	
-			}	if(check == 0) 
-						bingo += 1;
+				check1 = 0;
+			}
+				if(check2 == 0) 		// 축이 하나이고, 모든 index값을 반복한 뒤의 값을 가져야 하니 for문 外 위치
+					bingo += 1;
+				check2 = 0;
+				if(check3 == 0) 
+					bingo += 1;
+				check3 = 0;
 			
 		}	//while문 끝
 		
@@ -132,6 +124,7 @@ public class BingoSince20250211 {
 		
 		
 		
+
 	}
 
 }

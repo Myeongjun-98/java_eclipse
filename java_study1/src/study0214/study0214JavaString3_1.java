@@ -20,7 +20,7 @@ public class study0214JavaString3_1 {
 			}
 		}
 		if(idx == -1) {//만약 학과가 존재하지 않으면
-			System.out.println("등혹되지 않은 학과입니다.");
+			System.out.println("등록되지 않은 학과입니다.");
 			return; // return은 메서드를 종료시킨다. main메서드 종료되면 프로그램 끝
 		}
 		System.out.println("조교 : " + dept[1][idx] + " , 사무실 : " + dept[3][idx]);

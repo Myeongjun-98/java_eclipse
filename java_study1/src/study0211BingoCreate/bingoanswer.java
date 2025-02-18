@@ -54,11 +54,11 @@ Scanner scan = new Scanner(System.in);
 			
 			for(int i=0; i<5; i++) {
 				for( int k=0; k<5; k++) {
-					if(game[i*5+k] ==0) 가로++;
+					if(game[i * 5 + k] ==0) 가로++;
 					if( game[k*5+i] == 0 ) 세로++;
 				}
-				if( game[i*6] ==0 ) 대각선1++;
-				if( game[i*4+4] == 0)대각선2++;
+				if( game[i * 6] ==0 ) 대각선1++;
+				if( game[i * 4 + 4] == 0)대각선2++;
 				
 				if( 대각선2 == 5) bingo++; // 대각선 빙고 확인
 				if( 대각선1 == 5) bingo++; // 대각선 빙고 확인

@@ -1,9 +1,12 @@
 package study0218;
 
+import java.util.Scanner;
 
 public class ClassArray {
 
+	Scanner scan = new Scanner(System.in);
 	public static void main(String[] args) {
+		
 //		Member member = new Member();
 //		member.name = "김유신";
 //		member.job = "군인";
@@ -38,21 +41,44 @@ public class ClassArray {
 //			System.out.println(members[i].job);
 //		}
 			
+//		Member info = new Member();
+		
+//		/*
+//			class타입으로 변수지정 후 출력해보기		
+		
+		
+//		  영화제목, 장르, 관객수, 개봉년도
+//		 */
+//		
+//		MovieInfo movieInfo = new MovieInfo();
+//		
+//		movieInfo.title = "재밌는영화";
+//		movieInfo.genre = "코미디";
+//		movieInfo.viewCount = 100000000;
+//		movieInfo.revealday = 2025;
+//		
+//			System.out.print(movieInfo.title + " ");
+//			System.out.print(movieInfo.genre + " ");
+//			System.out.print(movieInfo.viewCount + " ");
+//			System.out.print(movieInfo.revealday + " ");
+		
+		
+//		System.out.println(info);	
+//		System.out.println(info.name);
+//		
+//		Member m1 = new Member();
+//		System.out.println(m1.name);
+		
 		Member info = new Member();
+				System.out.println(info.job);
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		Member info1 = new Member(20, "군인", "김유신");	 		// 클래스에 지정된 대로 순서 지켜야함(age, job)
+			System.out.println(info1.age + info1.job);
+	
+	
+	
+	
+	
 	}
 	
-	
-	
-	
-
 }

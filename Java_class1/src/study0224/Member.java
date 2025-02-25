@@ -46,8 +46,8 @@ public class Member {
 	}
 	// 클래스 메서드
 	static void output() {
-		setName("이순신");		//	인스턴스 메서드 호출 불가
-		System.out.println(name);	// 인스턴스 변수 사용불가
+//		setName("이순신");		//	인스턴스 메서드 호출 불가
+//		System.out.println(name);	// 인스턴스 변수 사용불가
 	}
 	
 }

@@ -42,12 +42,12 @@ public class Member {
 	// 인스턴스 메서드
 	void setName(String name) {
 		this.name = name;
-		output();		// 문제되지 않음
+		output();		// 문제되지 않음	◈ 비교대상
 	}
 	// 클래스 메서드
 	static void output() {
-//		setName("이순신");		//	인스턴스 메서드 호출 불가
-//		System.out.println(name);	// 인스턴스 변수 사용불가
+//		setName("이순신");		//	인스턴스 메서드 호출 불가			◈ 비교대상
+//		System.out.println(name);	// 인스턴스 변수 사용불가			◈ 비교대상
 	}
 	
 }

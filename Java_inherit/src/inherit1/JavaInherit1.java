@@ -3,7 +3,7 @@ package inherit1;
 public class JavaInherit1 {
 
 	public static void main(String[] args) {
-		Tv tv = new Tv();
+		Tv tv = new Tv();		// 호출은 자식이 먼저, 시행은 부모가 먼저(스택)
 		tv.onOff = true;	// 전원 On
 		tv.brand = "삼성";
 		tv.price = 1200000;
@@ -22,6 +22,20 @@ public class JavaInherit1 {
 		aircon.power();
 		com.power();
 		com.power();
+		
+		/////////////////////////////////////////////////////
+System.out.println();		
+		
+		Tv tv0 = new Tv("삼성",950000,"st60");
+		Aircon air = new Aircon("캐리어",542000,"ca18t");
+		Computer com0 = new Computer("삼성",1730000,"매직스테이션10");
+		
+		tv0.power();
+		air.power();
+		com0.power();
+		
+//		Product p = new Product();	// 이제, 추상클래스가 되어 객체생성 불가
+		
 		
 	}
 

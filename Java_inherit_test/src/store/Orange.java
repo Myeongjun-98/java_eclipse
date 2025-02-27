@@ -17,7 +17,7 @@ public class Orange extends Fruit {
 	};
 	@Override
 	public String toString() {
-		return "오렌지 " + cost + " " + capacity;
+		return "오렌지 " + cost + "원 " + capacity + "ml";
 	}
 	
 }

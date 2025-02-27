@@ -12,4 +12,19 @@ public abstract class Fruit {
 	public abstract void makeJuice();	//과일 주스만들기
 	public abstract void pieceFruit();	// 과일 소량 컵에 팔기
 	
+	
+	public int getCost() {
+		return cost;
+	}
+	public void setCost(int cost) {
+		this.cost = cost;
+	}
+	public int getCapacity() {
+		return capacity;
+	}
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+	
+	
 }

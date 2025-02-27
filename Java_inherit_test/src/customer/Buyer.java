@@ -1,10 +1,13 @@
 package customer;
 
+import java.util.Date;
+
 import store.Fruit;
 
 public class Buyer {
 	private int money;
 	private Fruit item;
+	private Date buyDate;
 	
 	public Buyer(int money) {		// Buyer객체 생성 시 동작 할 생성자메서드
 		this.money = money;		// 객체 생성 시 money변수를 꼭 작성해야함
@@ -25,11 +28,20 @@ public class Buyer {
 	public void setItem(Fruit item) {
 		this.item = item;
 	}
-	public String toString() {
-		return "보유 머니 " + this.money;
+	
+
+	public Date getBuyDate() {
+		return buyDate;
+	}
+
+	public void setBuyDate(Date buyDate) {
+		this.buyDate = buyDate;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "보유머니 : " +  this.money + "원 " + "구매일 : " + this.buyDate + " 구매음료 : "	+ this.item;
+	}
 	
 	// set, get 메서드
 	

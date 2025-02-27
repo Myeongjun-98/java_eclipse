@@ -16,7 +16,7 @@ public class Grape extends Fruit {
 	};
 	@Override
 	public String toString() {
-		return "포도 " + cost +" " + capacity;
+		return "포도 " + cost +"원 " + capacity+"ml";
 	}
 	
 	

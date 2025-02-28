@@ -4,7 +4,7 @@ import java.util.Date;
 
 import store.Fruit;
 
-public class Buyer {
+public final class Buyer {	// 부모클래스로 만들지 말라는 개발자사이의 언어
 	private int money;
 	private Fruit item;
 	private Date buyDate;

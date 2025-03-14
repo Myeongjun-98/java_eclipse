@@ -13,8 +13,17 @@ public class MainMt {
 				new Dino("스테고사우르스", 7)
 		};
 		
-		Create device1 = new Create();
-		device1.start();
+		Create[] device = new Create[알.length];
+		for(int i = 0; i < 알.length; i++) {
+			device[i] = new Create();
+		}
+			
+			device[0].start();
+			device[1].start();
+			device[2].start();
+			device[3].start();
+			//알 개수만큼 스레드를 만들었다. - 왜? 알 최대치만큼 스레드 있으면 좋으니까
+		
 		// 부화시킬 공룡을 선택하여 부화를 진행할것이다.
 		// 스레드를 통해 각 공룡별 시간만큼 동작하도록 할 것이다.
 		
@@ -22,10 +31,16 @@ public class MainMt {
 		
 		for(int i = 0; i < 알.length; i++) {
 			
-			System.out.print("1~4중 하나 : ");
+			System.out.print("1~4중 알 하나 선택 : ");
 			int select = sc.nextInt()	;
 		
 			Create.hatch(알[select - 1]);
+			System.out.println((i + 1) + "번 부화장치 가동");
+			
+			System.out.print("계속 부화합니까? ( 1 입력 -> 계속) : ");
+			if(sc.nextInt() != 1) {
+				break;
+			}
 			
 			
 		}

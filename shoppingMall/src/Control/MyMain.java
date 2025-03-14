@@ -20,20 +20,21 @@ public class MyMain {
 	}
 	
 	public static void main(String[] args) {
-//		while(true) {
-//			switch(menu()) {
-//			case 1 :	// 상품 목록 출력
-//				
-//			}else System.out.println("아이디 또는 비밀번호가 올바르지 않습니다.");
-//				break;
-//			case 2 : // 상품 검색 및 출력
-//				memberService.signUp();
-//				
-//				break; // 회원가입
-//			case 3 :	 // 출고요청시 재고확
-//			default: return;
-//			}
-		
+		Managing m = new Managing();
+		while(true) {
+			switch(menu()) {
+			case 1 :	// 상품 목록 출력
+				m.itemList();
+			
+				break;
+			case 2 : // 상품 검색 및 출력
+			   m.searchItem();
+				
+				break; // 회원가입
+			case 3 :	 // 출고요청시 재고확인
+			default: return;
+			}
+		}
 	}
 
 }

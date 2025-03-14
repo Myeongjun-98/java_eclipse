@@ -29,10 +29,6 @@ public class DBConnect {
 		String password = "1234";
 		String url = "jdbc:mysql://localhost:3306/shopping_mall";
 		
-		// 값 초기화
-		conn = null;
-		st = null;
-		rs = null;
 		
 		try {
 			conn = DriverManager.getConnection(url, user, password);
@@ -42,16 +38,6 @@ public class DBConnect {
 			e.printStackTrace();
 		}
 		
-		// 정보를 가져오기 위해 쿼리문 select하기
-		String sql = "select * from storage";
-		
-		try {
-			st = conn.createStatement();
-			rs = st.executeQuery(sql);
-		} catch (Exception e) {
-			System.out.println("쿼리문 조회 실패");
-			e.printStackTrace();
-		}
 		
 	}
 	

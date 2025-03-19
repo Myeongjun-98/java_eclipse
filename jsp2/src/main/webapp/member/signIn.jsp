@@ -30,7 +30,7 @@
 		</p>		
 		
 		<div id="formWrap">
-			<form id="fm" name = "fm" role = "form" method = "post" action = "./signInCheck.jsp">
+			<form id="fm" name = "fm" role = "form" method = "post" action = "signin">
 				<div class="input-field">
 					<label for = "userId">아이디	</label>
 					<input type = "text" name = "userId" id = "userId">
